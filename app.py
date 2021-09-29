@@ -3,7 +3,6 @@ from flask_restful import Resource, Api, reqparse
 
 app = Flask(__name__)
 api = Api(app)
-
 # miles = 0
 # tones = 0
 # tone_miles = 100
