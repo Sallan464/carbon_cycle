@@ -18,9 +18,11 @@ class caluate_road_freight(Resource):
 
     def put(self):
         parser = reqparse.RequestParser()
-        parser.add_argument('miles')
-        parser.add_argument('tons')
-        parser.add_argument('ton_miles', type=float)
+        parser.add_argument('miles', type=float)
+        parser.add_argument('km', type=float)
+        parser.add_argument('tonnes', type=float)
+        parser.add_argument('km/tonnes', type=float)
+        parser.add_argument('miles/tonnes', type=float)
         args = parser.parse_args()
 
         if args['miles'] or args['tons'] is None:
