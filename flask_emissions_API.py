@@ -47,7 +47,7 @@ class caluate_road_freight(Resource):
         return calculations, 201
 
 
-class caluate_boat_freight(Resource):
+class caluate_shipping_freight(Resource):
     def get(self):
         return {'Message': 'Sucesss', 'data': 'dummy_data' + ' C02'}
 
@@ -84,6 +84,25 @@ class caluate_boat_freight(Resource):
         calculations = {'Emmisons': str(Emmisons) + ' tonnes of CO2'}
 
         return calculations, 201
+    
+class caluate_airline_freight(Resource):
+    def get(self):
+        return {'Message': 'Sucesss', 'data': 'dummy_data' + ' C02'}
+
+    def put(self):
+        # uses european caluations and metric
+        parser = reqparse.RequestParser()
+        parser.add_argument('miles', type=float)
+        parser.add_argument('km', type=float)
+        parser.add_argument('tonnes', type=float)
+        parser.add_argument('km/tonnes', type=float)
+        parser.add_argument('miles/tonnes', type=float)
+        args = parser.parse_args()
+        print(args['miles'])
+        print(args['km'])
+        print(args['tonnes'])
+        print(args['km/tonnes'])
+        print(args['miles/tonnes'])
 
 
 api.add_resource(caluate_road_freight, '/road_freight')
