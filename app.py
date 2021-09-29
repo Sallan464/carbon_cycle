@@ -12,10 +12,6 @@ api = Api(app)
 
 empty_dict = {}
 
-# IDEA: Fedex google maps tracking of route for caluations
-# IDEA: USA and UK option
-
-
 class caluate_road_freight(Resource):
     def get(self):
         return {'Message': 'Sucesss', 'data': 'dummy_data' + ' C02'}
@@ -103,6 +99,8 @@ class caluate_airline_freight(Resource):
         print(args['km/tonnes'])
         print(args['miles/tonnes'])
 
+# IDEA: Fedex google maps tracking of route for caluations
+# IDEA: USA and UK option
 
 api.add_resource(caluate_road_freight, '/road_freight')
 api.add_resource(caluate_boat_freight, '/boat_freight')

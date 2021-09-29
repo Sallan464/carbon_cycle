@@ -1,3 +1,3 @@
-from flask_emissions_API import app
+from app import app
 
 app.run()
